@@ -59,16 +59,20 @@ section{
 i{
     font-size: 1.4em;
 }
+i:hover{
+    cursor: pointer;
+}
 .content{
     height: 80vh;
     overflow: hidden;
     /* border: 2px solid blue; */
 }
 #spreadsheet-conatiner{
+    height: 100%;
     display: grid;
-    grid-template-columns: 50px repeat(26, 100px);
-    grid-template-rows: 100px repeat(20, 50px);
-    overflow: scroll;
+    grid-template-columns: 50px repeat(100, 100px);
+    grid-template-rows: 100px  repeat(100, 100px);
+   overflow: scroll;
 }
 
 .cell{
@@ -81,6 +85,7 @@ i{
     background-color:  white;
     font-weight: bold;
     text-align: center;
+    
 }
 
 .selected-cell{
@@ -91,8 +96,21 @@ i{
     height: 5vh;
     /* border: 2px solid red; */
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .footer-icon{
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
    
+}
+.sheet-tab{
+    width: 90vw;
+    border: 2px solid lightgray;
+}
+.sheets{
+    width: 70px;
+    border-bottom: 4px solid gray;
+    padding-left: 10px;
+    padding-right: 10px;
 }

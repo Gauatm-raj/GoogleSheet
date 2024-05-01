@@ -58,7 +58,7 @@
                 <i class="fa-solid fa-align-left" onclick="left()"></i>
                 <i class="fa-solid fa-align-center" onclick="center()"></i>
                 <i class="fa-solid fa-align-right" onclick="right()"></i>
-                <input type="color" value="black">
+                <input type="color" id="color" value="" onchange="colorChange()">
                 <i class="fa-solid fa-fill-drip"></i>
                 <i class="fa-solid fa-cloud-arrow-down"></i>
                 <i class="fa-solid fa-cloud-arrow-up"></i>
@@ -72,11 +72,11 @@
         <div class="footer">
             <div class="footer-icon">
                 <i class="fa-solid fa-plus"></i>
-                <i class="fa-solid fa-bars"></i>
+                <!-- <i class="fa-solid fa-bars"></i> -->
             </div>
-            <div class="current">
-                <div>
-                    sheet1
+            <div class="sheet-tab">
+                <div class="sheets">
+                    <b>Sheet</b>
                 </div>
             </div>
             

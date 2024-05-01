@@ -3,7 +3,7 @@ const container = document.getElementById('spreadsheet-conatiner');
 
 
 const columHeaderRow = document.createElement('div');
-for(let i = 0; i<=26; i++){
+for(let i = 0; i<=100; i++){
      const cell = document.createElement('div');
      cell.className = "cell"
      cell.classList.add("header-cell")
@@ -16,13 +16,27 @@ container.append(columHeaderRow);
 
 // rows and columns: 20*26: 
  count = 1
-for(let row = 1; row<=26; row++){
+for(let row = 1; row<=100; row++){
     const newRow = document.createElement('div');
     newRow.id = "row"+row
     const rowHeader = document.createElement('div');
     rowHeader.className = "cell"
     rowHeader.classList.add("header-cell")
-    rowHeader.innerText =  String.fromCharCode(64+row)
+    let n=row
+    let ans=""
+    while(n>0){
+    let rem=n%26;
+    if(rem==0){
+        ans="Z"+ans;
+        n=Math.floor(n/26)-1
+        rowHeader.innerText = ans
+    }else{
+        ans=String.fromCharCode(rem-1+65)+ans;
+        n=Math.floor(n/26);
+        rowHeader.innerText = ans
+    }
+    }
+    //rowHeader.innerText =  String.fromCharCode(64+row)
     newRow.append(rowHeader);
 
     
@@ -30,7 +44,7 @@ for(let row = 1; row<=26; row++){
     // newRow.style.display = "flex"
 
 
-    for(col = 1; col<=26; col++){
+    for(col = 1; col<=100; col++){
         const newCol = document.createElement('div');
         newCol.className = "cell"
         // newCol.innerText =  `12`
@@ -146,6 +160,15 @@ function paste1(){
         
     })
 
+}
+
+//text color change
+const color=document.getElementById("color");
+function colorChange(){
+    selectedCells.forEach(cell=>{
+        cell.style.color=color.value;
+        
+    })
 }
 
 
