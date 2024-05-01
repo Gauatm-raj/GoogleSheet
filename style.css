@@ -1,34 +1,98 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 header{
-    height: 2rem;
-    background-color: rgb(41, 88, 41);
+
+    height: 10vh;
+    background-color:rgb(215, 214, 214);
+    
+}
+.heading{
+    height: 5vh;
+    color: black;
+    text-align: center;
+    padding-top: 5px;
     
 }
 .menu{
+    height: 5vh;
     display: flex;
-    width:100%;
-
+    
 }
-.ul{
-    width:20%;
+.menu-option{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 2px;
     display: flex;
-    color: white;
-    justify-content: space-around;
     align-items: center;
 }
+.menu-option.selected{
+    background-color: white;
+     
+}
+.menu-option:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.menu-option.selected:hover{
+    background-color: gray;
+    cursor: default;
+}
+section{
+    height: 90vh;
+   
+}
 .options{
-    margin-top: 10px;
+    height: 5vh;
     display: flex;
+    align-items: center;
     width: 100%;
+   
 }
 .menu1{
-    width: 40%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
 }
 i{
     font-size: 1.4em;
+}
+.content{
+    height: 80vh;
+    overflow: hidden;
+    /* border: 2px solid blue; */
+}
+#spreadsheet-conatiner{
+    display: grid;
+    grid-template-columns: 50px repeat(26, 100px);
+    grid-template-rows: 100px repeat(20, 50px);
+    overflow: scroll;
+}
+
+.cell{
+    border: 1px solid #ccc;
+    color: black;
+   
+}
+
+.header-cell{
+    background-color:  white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.selected-cell{
+   background-color: rgb(214, 247, 253);
+   outline: none;
+}
+.footer{
+    height: 5vh;
+    /* border: 2px solid red; */
+    display: flex;
+}
+.footer-icon{
+    margin-left: 5px;
+   
 }

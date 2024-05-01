@@ -10,42 +10,76 @@
 </head>
 <body>
     <header>
+        <div class="heading">Google Sheet Clone</div>
+        <hr>
         <div class="menu">
-           <div class="ul">
-            <div>Home</div>
-            <div>File</div>
-            <div>Insert</div>
-            <div>Layout</div>
-            <div>Help</div>
-           </div>
+            <div class="file menu-option">File</div>
+            <div class="home menu-option selected">Home</div>
+            <div class="insert menu-option">Insert</div>
+            <div class="layout menu-option">Layout</div>
+            <div class="help menu-option">Help</div>
+           
         </div>
+        <hr>
     </header>
     <section>
         <div class="options">
             <div class="menu1">
-                <i class="fa-regular fa-copy"></i>
-                <i class="fa-solid fa-scissors"></i>
-                <i class="fa-regular fa-clipboard"></i>
-                <select name="" id="font-type">
-                    <option value=""></option>
+                <i class="fa-regular fa-copy" onclick="copy1()"></i>
+                <i class="fa-solid fa-scissors" onclick="cut1()"></i>
+                <i class="fa-regular fa-clipboard" onclick="paste1()"></i>
+                <select name="" id="font-type" onclick="fontChange()">
+                    <option style="font-family: Noto Sans;" value="Noto Sans" onclick="noto()">Noto Sans</option>
+                    <option style="font-family:Arial" value="Arial" onclick="arial()">Arial</option>
+                    <option style="font-family:Calibri" value="Calibri" onclick="calibri()">Calibri</option>
+                    <option style="font-family:Comic Sans MS" value="Comic Sans MS" onclick="comic()">Comic Sans MS</option>
+                    <option style="font-family:Courier New" value="Courier New" onclick="courier()">Courier New</option> 
+                    <option style="font-family: Impact" value="Impact" onclick="impact()">Impact</option>
+                    <option style="font-family: Georgia" value="Georgia">Georgia</option>
+                    <option style="font-family:Garamond" value="Garamond">Garamond</option>
+                    <option style="font-family: Lang" value="Lato">Lato</option>
+                    <option style="font-family:Open Sans" value="Open Sans">Open Sans</option>
+                    <option style="font-family:Palatino" value="Palatino">Palatino</option>
+                    <option style="font-family:Verdana" value="Verdana">Verdana</option>
                 </select>
-                <select name="" id="font-size">
-                    <option value="">7</option>
-                    <option value="">14</option>
-                    <option value="">18</option>
-                    <option value="">20</option>
+                <select name="" id="font-size" onclick="fontSizeChange()">
+                    <option value="16px">16</option>
+                    <option value="18px">18</option>
+                    <option value="20px">20</option>
+                    <option value="22px">22</option>
+                    <option value="24px">24</option>
+                    <option value="27px">26</option>
+                    <option value="28px">28</option>
+                    <option value="30px">30</option>
                 </select>
-                <i class="fa-solid fa-bold"></i>
-                <i class="fa-solid fa-italic"></i>
-                <i class="fa-solid fa-underline"></i>
-                <i class="fa-solid fa-align-left"></i>
-                <i class="fa-solid fa-align-center"></i>
-                <i class="fa-solid fa-align-right"></i>
+                <i class="fa-solid fa-bold" onclick="bold()"></i>
+                <i class="fa-solid fa-italic" onclick="italic()"></i>
+                <i class="fa-solid fa-underline" onclick="underline()"></i>
+                <i class="fa-solid fa-align-left" onclick="left()"></i>
+                <i class="fa-solid fa-align-center" onclick="center()"></i>
+                <i class="fa-solid fa-align-right" onclick="right()"></i>
+                <input type="color" value="black">
                 <i class="fa-solid fa-fill-drip"></i>
                 <i class="fa-solid fa-cloud-arrow-down"></i>
                 <i class="fa-solid fa-cloud-arrow-up"></i>
 
             </div>
+        </div>
+        <div class="content" >
+         <div id="spreadsheet-conatiner"></div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-icon">
+                <i class="fa-solid fa-plus"></i>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="current">
+                <div>
+                    sheet1
+                </div>
+            </div>
+            
         </div>
     </section>
     
