@@ -86,21 +86,41 @@ function handleCellClick(event){
 }
 
 function bold(){
+    let bb=document.querySelector(".fa-bold")
     selectedCells.forEach(cell => {
-        cell.style.fontWeight = cell.style.fontWeight === "bold" ? "normal" : "bold"
+        cell.style.fontWeight = cell.style.fontWeight === "bold" ? "normal"  : "bold"
+        if(cell.style.fontWeight !== "bold"){
+            bb.classList.remove('selected');
+        }else{
+            bb.classList.add('selected');
+        }
    })
 }
 
 function italic(){
+    let bb=document.querySelector(".fa-italic")
     selectedCells.forEach(cell => {
         cell.style.fontStyle = cell.style.fontStyle === "italic" ? "normal" : "italic"
+        if(cell.style.fontStyle !== "italic"){
+            bb.classList.remove('selected');
+        }else{
+            bb.classList.add('selected');
+        }
    })
+   
 }
 
 function underline(){
+    let bb=document.querySelector(".fa-underline")
     selectedCells.forEach(cell => {
         cell.style.textDecoration = cell.style.textDecoration === "underline" ? "none" : "underline"
+        if(cell.style.textDecoration !== "underline"){
+         bb.classList.remove('selected');
+        }else{
+         bb.classList.add('selected');
+         }
    })
+    
 }
 
 //font change
@@ -110,6 +130,8 @@ function fontChange(){
     selectedCells.forEach(cell=>{
         cell.style.fontFamily=`${font.value}`
     })
+
+    
 }
 
 const fontSize=document.getElementById("font-size")
@@ -118,47 +140,65 @@ function fontSizeChange(){
     selectedCells.forEach(cell=>{
         cell.style.fontSize=`${fontSize.value}`
     })
+    
 }
 
 //Text Align
 function left(){
+    let bb=document.querySelector(".fa-align-left")
     selectedCells.forEach(cell=>{
         cell.style.textAlign="left"
+        
     })
 }
 function center(){
+    
     selectedCells.forEach(cell=>{
         cell.style.textAlign="center"
+    
     })
 }
 function right(){
+ 
     selectedCells.forEach(cell=>{
         cell.style.textAlign="right"
+       
     })
 }
 let copy="";
 // // Copy Cut Paste
 function copy1(){
+    let bb=document.querySelector(".fa-copy")
     selectedCells.forEach(cell=>{
         copy=cell.innerText
         
+        if(cell.innerText === ""){
+            bb.classList.remove('selected');
+        }else{
+            bb.classList.add('selected');
+        }
     })
 
 }
 
 function cut1(){
+    
     selectedCells.forEach(cell=>{
         copy=cell.innerText
         cell.innerText=""
         
     })
+    
 }
 
 function paste1(){
+    let bb=document.querySelector(".fa-copy")
     selectedCells.forEach(cell=>{
         cell.innerText=copy;
+        bb.classList.remove('selected');
         
     })
+    
 
 }
 
@@ -171,4 +211,8 @@ function colorChange(){
     })
 }
 
+function detail(evt){
+console.log(selectedCells);
+console.log(document.querySelectorAll(".selected-cell"))
 
+}
